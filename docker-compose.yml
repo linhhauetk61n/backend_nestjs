@@ -1,0 +1,12 @@
+version: "1"
+
+service:
+  postgres:
+    container_name: stories-db
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-pg}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pg}
+      POSTGRES_DB: ${POSTGRES_DB:-}
